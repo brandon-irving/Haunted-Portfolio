@@ -26,9 +26,9 @@ const renderGhostText = async (setShowCommands) => {
         await wait(2000)
         await ghostWriter.glitchWrite(glitchThis, 'Do you find this scary?', )
         await wait(1000)
-        await ghostWriter.glitchWrite(glitchThis, 'Bri', )
+        await ghostWriter.glitchWrite(glitchThis, 'Hire', )
         await wait(200)
-        await ghostWriter.glitchWrite(glitchThis, 'please', )
+        await ghostWriter.glitchWrite(glitchThis, 'me', )
         await wait(200)
         await ghostWriter.glitchWrite(glitchThis, '', )
     }
