@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/bootstrap": "^4.3.1",
+    "@types/lodash-es": "^4.17.3",
+    "@types/react-bootstrap": "^0.32.20",
+    "@types/styled-components": "^4.4.0",
+    "bootstrap": "^4.4.1",
+    "lodash-es": "^4.17.15",
+    "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.11.0",
+    "react-scripts": "0.9.x",
+    "styled-components": "^5.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@types/gh-pages": "^2.0.1",
+    "gh-pages": "^2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
