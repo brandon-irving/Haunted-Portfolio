@@ -58,10 +58,7 @@ export const HauntedTerminal = (props) => {
     // FUNCTIONS
     const handleSubmit = async (e) => {
         e.preventDefault()
-        if (inputValue.length > 18) {
-            await ghostWriter.glitchWrite(glitchThis, 'Not a command')
-            return logs.innerHTML += `<p>${inputValue}</p>`
-        }
+
         await ghostWriter.glitchWrite(glitchThis, inputValue)
         await wait(1000)
         await ghostWriter.glitchWrite(glitchThis, '')

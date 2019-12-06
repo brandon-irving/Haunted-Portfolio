@@ -71,7 +71,6 @@ ${props =>
 `}
 `
 export const GhostInput = styled.input`
-	// position: absolute;
 	bottom: 30px;
 	width: 240px;
 	height: 35px;
@@ -120,19 +119,14 @@ bottom: calc(31px - 2px);
 margin-left: -2%;
 margin-top: -15%;   
 `
-export const HauntedText = styled.div`
-display: ${props => props.hide ? 'none' : 'flex'};
-    justify-content: center;
-    margin-top: ${props => props.theme.isMobile ? '25%' : ' 5%'};
-    text-align: center;
-    ng: 30px;
-    font-size: 35px;
-    font-family: 'M PLUS 1p','Open Sans',sans-serif;
-`
+
 export const HauntedInputText = styled.div`
 position: absolute;
-left: ${props => props.theme.isMobile ? ' 8%' : '  41%'};
-bottom: ${props => props.theme.isMobile ? '19%' : ' 40%'};
+margin: auto;
+top: ${props => props.theme.isMobile ? '62%' : '47%'};
+right: 0;
+bottom: 0;
+left: 0;
     text-align: center;
     font-size: 35px;
     font-family: 'M PLUS 1p','Open Sans',sans-serif;
