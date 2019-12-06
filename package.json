@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://brandon-irving.github.io/Haunted-Portfolio",
   "dependencies": {
     "@types/bootstrap": "^4.3.1",
     "@types/lodash-es": "^4.17.3",
@@ -23,6 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   }
 }
