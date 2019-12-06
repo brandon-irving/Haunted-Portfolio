@@ -16,7 +16,7 @@ const App = () => {
   return (
     <ThemeProvider theme={{ ...terminalTheme, isMobile }}>
       <GlobalContextProvider>
-        <HauntedTerminal setTerminalTheme={setTerminalTheme} />
+        <HauntedTerminal isMobile={isMobile} setTerminalTheme={setTerminalTheme} />
       </GlobalContextProvider>
     </ThemeProvider>
   )

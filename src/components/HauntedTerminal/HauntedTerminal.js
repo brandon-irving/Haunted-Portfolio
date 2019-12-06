@@ -49,7 +49,7 @@ export const HauntedTerminal = (props) => {
     // HOOKS
 
     const terminalRef = useRef(null)
-    const [inputValue, setInput] = useState('')
+    const [input, setInput] = useState('')
     const [showInput, setShowInput] = useState(false)
     const [showDescription, setShowDescription] = useState(false)
     const [showResume, setShowResume] = useState(false)
@@ -58,6 +58,7 @@ export const HauntedTerminal = (props) => {
     // FUNCTIONS
     const handleSubmit = async (e) => {
         e.preventDefault()
+        const inputValue = input.toLocaleLowerCase()
 
         await ghostWriter.glitchWrite(glitchThis, inputValue)
         await wait(1000)
@@ -80,7 +81,9 @@ export const HauntedTerminal = (props) => {
             renderGhostText(setShowCommands)
         }
     }, [terminalRef])
+
     const showTerminalCommands = (!showResume && showCommands && !showDescription) || (hasVisited && !showResume && !showDescription)
+
     return (
         <HauntedTerminalContainer fluid ref={terminalRef}>
             <GlobalStyle />
@@ -98,14 +101,14 @@ export const HauntedTerminal = (props) => {
                     </LogsContainer>
                 }
             </TerminalContainer>
-            <HauntedInputText hide={hasVisited} id="glitchThis" className="text" />
+            {!showResume && <HauntedInputText hide={hasVisited} id="glitchThis" className="text" />}
 
             {showInput && !showResume &&
                 <HauntedInputContainer >
                     {showDescription && <PortfolioDetails />}
                     <GhostForm className="input-box" onSubmit={handleSubmit}>
 
-                        <GhostInput value={inputValue} onChange={(e) => setInput(e.target.value)} id="input" placeholder="$" autoComplete="off" disabled="" />
+                        <GhostInput id="ghostInput" value={input} onChange={(e) => setInput(e.target.value)} placeholder="$" autoComplete="off" disabled="" />
                         <GhostInputShadow />
                         <button type="submit" style={{ display: 'none' }} />
                     </GhostForm>

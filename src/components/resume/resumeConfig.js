@@ -38,8 +38,6 @@ export const brandonsResumeConfig = {
             ]
         },
     ],
-    // list = { isLink: bool, name, url }
-    //         const { title, list } = extra
     extras: [
         {
             title: 'Portfolio',
@@ -52,11 +50,11 @@ export const brandonsResumeConfig = {
         {
             title: 'Sample Works',
             list: [
+                { isLink: false, name: 'Uptime-Solution Machine Monitorization Web App' },
                 { isLink: true, url: 'https://Youfit.com', name: 'Youfit.com (React Js/Gatsby)' },
                 { isLink: true, url: 'https://Cityfurniture.com', name: 'Cityfurniture.com (Next Js - serverside rendering, node js backend)' },
                 { isLink: true, url: 'https://brandon-irving.github.io/irving-family-feud', name: 'Family Feud (React Js using context for state management)' },
-                { isLink: true, url: 'https://brandon-irving.github.io/hooks-library', name: 'Hooks Library! (Library of hooks using Reacts context API that I created)' },
-
+                { isLink: true, url: 'https://brandon-irving.github.io/hooks-library', name: 'Hooks Library! (Library of React hooks that I created)' },
 
             ],
 

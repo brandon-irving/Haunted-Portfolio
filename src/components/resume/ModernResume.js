@@ -12,13 +12,13 @@ const ModernResume = (props) => {
             const style = addSpace(index)
             const { title, list } = extra
             const ExtraListItems = () => {
-                return list.map(item => {
-                    const desiredItem = item.isLink ? <li><a className="link" target="_blank" href={item.url}>{item.name}</a></li> : <li>{item.name}</li>
+                return list.map((item, i) => {
+                    const desiredItem = item.isLink ? <li key={i}><a className="link" target="_blank" href={item.url}>{item.name}</a></li> : <li key={i}>{item.name}</li>
                     return desiredItem
                 })
             }
             return (
-                <section style={style}>
+                <section key={index} style={style}>
                     <h2 className="resumeHeader">{title}</h2>
                     <ul>
                         <ExtraListItems />
@@ -32,17 +32,17 @@ const ModernResume = (props) => {
             const style = addSpace(index)
             const { position, date, jobLocation, jobDuties, jobCompany } = experience
             const JobDutyList = () => {
-                return jobDuties.map(duty => {
+                return jobDuties.map((duty, i) => {
                     return (
-                        <li>{duty}</li>
+                        <li key={i}>{duty}</li>
                     )
                 })
             }
 
             return (
-                <section style={style}>
+                <section key={index} style={style}>
                     <h3 className="resumeHeader"> {position} <span className="time">
-                        <time datetime={date} className="start">2013</time>
+                        <time dateTime={date} className="start">2013</time>
                         &#8211; Present
       </span></h3>
                     <p><strong>{jobCompany}</strong> <b>{jobLocation}</b></p>
@@ -55,17 +55,17 @@ const ModernResume = (props) => {
 
     }
     const EducationList = () => {
-        return education.map(school => {
+        return education.map((school, i) => {
             const { name, degree, location, gradDate } = school
 
             return (
-                <React.Fragment>
+                <div key={i}>
 
                     <h3 className="resumeHeader">{name} <span className="time">
                         <time datetime="2000-05-20">{gradDate}</time>
                     </span></h3>
                     <p>{degree} <b>{location}</b></p>
-                </React.Fragment>
+                </div>
             )
         })
     }
