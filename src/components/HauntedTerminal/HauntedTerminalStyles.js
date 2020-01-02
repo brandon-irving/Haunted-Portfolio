@@ -2,13 +2,7 @@ import styled, { css, keyframes, createGlobalStyle } from 'styled-components'
 import { Row, Col, Container } from 'react-bootstrap'
 
 export const GlobalStyle = createGlobalStyle`
-body {
-    height: 100vh;
-    background-color: ${props => props.theme.defaultColor};
-    background-image: radial-gradient(${props => props.theme.defaultBackgroundColor},  ${props => props.theme.defaultColor} 120%);
-    color: ${props => props.theme.defaultTextColor};
-    text-shadow: ${props => props.theme.defaultTextShadow};
-}
+
 `
 
 export const TerminalContainer = styled(Row)`
@@ -24,6 +18,11 @@ display: ${props => props.theme.isMobile ? 'none' : ' block'};
 
 `
 export const HauntedTerminalContainer = styled(Container)`
+height: 100vh;
+background-color: ${props => props.theme.defaultColor};
+background-image: radial-gradient(${props => props.theme.defaultBackgroundColor},  ${props => props.theme.defaultColor} 120%);
+color: ${props => props.theme.defaultTextColor};
+text-shadow: ${props => props.theme.defaultTextShadow};
 
 `
 const blink = keyframes`
@@ -61,12 +60,12 @@ font-family: 'M PLUS 1p', 'Open Sans', sans-serif;
 }
 `
 export const GhostForm = styled.form`
-position: absolute;
-bottom: ${props => props.theme.isMobile ? '10%' : '35%'};
-left: ${props => props.theme.isMobile ? '' : '43.2%'};
+position: fixed;
+top: ${props=> props.theme.isMobile ? '80%' : '65%'};
+left: 50%;
+transform: translate(-50%, -50%);
 ${props =>
         props.theme.isMobile && css`
-
 
 `}
 `
@@ -121,15 +120,10 @@ margin-top: -15%;
 `
 
 export const HauntedInputText = styled.div`
-position: absolute;
-margin: auto;
-top: ${props => props.theme.isMobile ? '62%' : '47%'};
-right: 0;
-bottom: 0;
-left: 0;
-    text-align: center;
-    font-size: 35px;
-    font-family: 'M PLUS 1p','Open Sans',sans-serif;
+position: fixed;
+top: ${props=> props.theme.isMobile ? '70%' : '50%'};
+left: 50%;
+transform: translate(-50%, -50%);
 `
 export const HauntedInputContainer = styled(Row)`
 display: flex;

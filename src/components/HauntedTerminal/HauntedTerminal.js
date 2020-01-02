@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './HauntedTerminal.css'
 import * as ghostWriter from '../../utils/ghostWriter'
-// import { useGlobalContext } from '../context/globalContext';
 import { HauntedInputText, CommandsContainer, HauntedTerminalContainer, Log, GhostInput, GhostForm, GhostInputShadow, GlobalStyle, HauntedInputContainer, LogsContainer, TerminalContainer } from './HauntedTerminalStyles';
 import TerminalCommands from '../TerminalCommands/TerminalCommands'
 import { CommandsHandler } from '../Commands';
-/*  TODO: remove package react-pdf */
 import ModernResume from '../resume/ModernResume';
 import { wait } from '../../utils/helperFunctions';
 import PortfolioDetails from '../PortfolioDetails/PortfolioDetails';
@@ -57,6 +55,7 @@ export const HauntedTerminal = (props) => {
 
     // FUNCTIONS
     const handleSubmit = async (e) => {
+        setShowInput(false)
         e.preventDefault()
         const inputValue = input.toLocaleLowerCase()
 
@@ -74,12 +73,14 @@ export const HauntedTerminal = (props) => {
         logs.innerHTML += `<h6 style="white-space: pre-line; margin-bottom: 0;">${inputValue + '\n'}</h6>`
 
         setInput('')
+        setShowInput(true)
     }
 
     useEffect(() => {
         if (terminalRef.current !== null && !showInput && runIntroText) {
             renderGhostText(setShowCommands)
         }
+        renderGhostText(setShowCommands)
     }, [terminalRef])
 
     const showTerminalCommands = (!showResume && showCommands && !showDescription) || (hasVisited && !showResume && !showDescription)
