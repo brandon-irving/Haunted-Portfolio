@@ -4,7 +4,9 @@ import { Row, Col, Container } from 'react-bootstrap'
 export const GlobalStyle = createGlobalStyle`
 
 `
-
+export const Descriptor = styled.p`
+margin: 0;
+`
 export const TerminalContainer = styled(Row)`
 height: 150px
 

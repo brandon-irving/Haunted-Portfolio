@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './HauntedTerminal.css'
 import * as ghostWriter from '../../utils/ghostWriter'
-import { HauntedInputText, CommandsContainer, HauntedTerminalContainer, Log, GhostInput, GhostForm, GhostInputShadow, GlobalStyle, HauntedInputContainer, LogsContainer, TerminalContainer } from './HauntedTerminalStyles';
+import { Descriptor, HauntedInputText, CommandsContainer, HauntedTerminalContainer, Log, GhostInput, GhostForm, GhostInputShadow, GlobalStyle, HauntedInputContainer, LogsContainer, TerminalContainer } from './HauntedTerminalStyles';
 import TerminalCommands from '../TerminalCommands/TerminalCommands'
 import { CommandsHandler } from '../Commands';
 import ModernResume from '../resume/ModernResume';
@@ -97,7 +97,19 @@ export const HauntedTerminal = (props) => {
                 </CommandsContainer>
                 {showInput &&
                     <LogsContainer>
-                        Logs:
+                        <Descriptor>
+                         Brandon Irving
+                        </Descriptor>
+                        <Descriptor>
+                        Full Stack Web Developer
+                        </Descriptor>
+                        <Descriptor>
+                         React Js Enthusiast
+                        </Descriptor>
+                        <Descriptor>
+                            Javascript Expert
+                        </Descriptor>
+                       
                     <Log md={2} id="logs" />
                     </LogsContainer>
                 }
